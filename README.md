@@ -55,3 +55,20 @@ You can now test your deployment:
 Done!
 
 **by http://www.tutum.co**
+
+
+_____________________
+
+**Persistent data**
+
+start a first container and copie config files on host:
+
+```sudo docker cp glassfish:/opt/glassfish4/glassfish/ /home2/```
+
+stop and remove container 
+
+start a new container with 
+
+docker run --restart="always" -d --name "glassfish" -p 4848:4848 -e VIRTUAL_HOST=test.fr  -e GLASSFISH_PASS="your_password" -v /home2/glassfish:/opt/glassfish4/glassfish/ jancelin/glassfish
+
+
