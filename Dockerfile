@@ -12,12 +12,12 @@ RUN apt-get update && \
 ENV PATH /opt/glassfish4/bin:$PATH
 
 ADD run.sh /run.sh
+ADD setup.sh /setup.sh
 ADD change_admin_password.sh /change_admin_password.sh
 ADD change_admin_password_func.sh /change_admin_password_func.sh
 ADD enable_secure_admin.sh /enable_secure_admin.sh
 RUN chmod +x /*.sh
 
-ADD setup.sh /setup.sh
 RUN /setup.sh
 VOLUME /home
 # 4848 (administration), 8080 (HTTP listener), 8181 (HTTPS listener)
