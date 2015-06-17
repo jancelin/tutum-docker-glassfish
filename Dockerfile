@@ -20,5 +20,5 @@ RUN chmod +x /*.sh
 
 VOLUME /home
 # 4848 (administration), 8080 (HTTP listener), 8181 (HTTPS listener)
-EXPOSE 4848 8080 8181
+EXPOSE 4848 8080 80 8181
 CMD ["/run.sh"]
