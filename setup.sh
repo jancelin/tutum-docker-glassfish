@@ -1,3 +1,3 @@
 #!/bin/bash
 
-asadmin create-jvm-options "-Duser.timezone=Europe/Paris"
+asadmin --user=admin create-jvm-options "-Duser.timezone=Europe/Paris"
