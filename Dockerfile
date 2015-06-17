@@ -21,5 +21,4 @@ RUN chmod +x /*.sh
 VOLUME /home
 # 4848 (administration), 8080 (HTTP listener), 8181 (HTTPS listener)
 EXPOSE 4848 8080 8181
-ENTRYPOINT /setup.sh
-CMD ["/run.sh"]
+CMD ["/run.sh","sh ./setup.sh"]
