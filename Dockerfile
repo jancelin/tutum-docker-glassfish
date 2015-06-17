@@ -3,9 +3,9 @@ MAINTAINER Feng Honglin <hfeng@tutum.co>
 
 RUN apt-get update && \
     apt-get install -y wget unzip pwgen expect && \
-    wget download.java.net/glassfish/4.0/release/glassfish-4.0.zip && \
-    unzip glassfish-4.0.zip -d /opt && \
-    rm glassfish-4.0.zip && \
+    wget download.java.net/glassfish/4.1/release/glassfish-4.1.zip && \
+    unzip glassfish-4.1.zip -d /opt && \
+    rm glassfish-4.1.zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
