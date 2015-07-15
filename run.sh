@@ -1,7 +1,4 @@
 #!/bin/bash
-
-
-
 set -e
 
 asadmin start-domain 
@@ -10,7 +7,9 @@ asadmin --user=admin create-jvm-options "-Duser.timezone=Europe/Paris"
 # changement de port
 asadmin set configs.config.server-config.network-config.network-listeners.network-listener.http-listener-1.port=80
 # deployer les war en stock
-
+cp /home/war/* /opt/glassfish4/glassfish/domains/domain1/autodeploy
+# page acceuil
+asadmin set server.http-service.virtual-server.server.default-web-module=home
 
 if [ ! -f /.glassfish_admin_password_changed ]; then
     /change_admin_password.sh
