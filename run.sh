@@ -9,11 +9,11 @@ asadmin set configs.config.server-config.network-config.network-listeners.networ
 # deployer les war en stock
 cp /home/war/* /opt/glassfish4/glassfish/domains/domain1/autodeploy
 # page acceuil
+sleep 1m
 asadmin set server.http-service.virtual-server.server.default-web-module=home
 
 if [ ! -f /.glassfish_admin_password_changed ]; then
     /change_admin_password.sh
-    
 fi
 echo "=> Restarting Glassfish server"
 asadmin stop-domain
